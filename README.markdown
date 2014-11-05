@@ -191,7 +191,7 @@ The example above demonstrates the following style guidelines:
 
 For conciseness, avoid using `self` since Swift does not require it to access an object's properties or invoke its methods.
 
-Use `self` when required to differentiate between property names and arguments in initializers, and when referencing properties in closures to make capture semantics explicit:
+Use `self` when required to differentiate between property names and arguments in initializers. Otherwise, Only include the explicit keyword when required by the language — for example, in a closure to make capture semantics explicit, or when parameter names conflict:
 
 ```swift
 class BoardLocation {
@@ -200,10 +200,20 @@ class BoardLocation {
   init(row: Int,column: Int) {
     self.row = row
     self.column = column
-    
+
     let closure = { () -> () in
       println(self.row)
     }
+  }
+}
+
+class CustomView: UIView {
+  func frameAfterTransform(transform: CGAffineTransform, andOffset offset: (CGFloat,CGFloat)) -> CGRect {
+    //This can be done easier, but just to make point of using duplicate variable names
+    var frame = CGRectApplyAffineTransform(self.frame, transform)
+    let (dx,dy) = offset
+    frame = CGRectOffset(frame, dx, dy)
+    return frame
   }
 }
 ```
