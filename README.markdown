@@ -383,6 +383,7 @@ If possible, parentheses must not be used in control flow statements:
 if value == nil {
   // do something
 }
+
 for person in attendeeList {
   // do something
 }
@@ -393,6 +394,7 @@ for person in attendeeList {
 if (value == nil) {
   // do something
 }
+
 for (person in attendeeList) {
   // do something
 }
