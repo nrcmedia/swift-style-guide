@@ -248,7 +248,7 @@ func reticulateSplines(spline: [Double], adjustmentFactor: Double,
 Use trailing closure syntax wherever possible. In all cases, give the closure parameters descriptive names:
 
 ```swift
-return SKAction.customActionWithDuration(effect.duration) { node, elapsedTime in 
+return SKAction.customActionWithDuration(effect.duration) { node, elapsedTime in
   // more code goes here
 }
 ```
