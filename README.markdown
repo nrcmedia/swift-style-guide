@@ -1,6 +1,6 @@
 # The Official NRC Swift Style Guide.
 
-This style guide is used for all projects of NRC Media. As you can see it is a forked from [The Official raywenderlich.com Swift Style Guide](The Official raywenderlich.com Swift Style Guide), but now is its own document additions and changes. See the git log for specific changes.
+This style guide is used for all projects of NRC Media. As you can see it is forked from [The Official raywenderlich.com Swift Style Guide](The Official raywenderlich.com Swift Style Guide), but is now a seperate document with its own additions and changes. See the git log for specifics.
 
 The focus of this guide is similar to its origin: to have readable code that is consistent over all our projects — even though we have many different authors working on them. The overarching goals are conciseness, readability, and simplicity.
 
