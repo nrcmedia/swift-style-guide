@@ -20,6 +20,7 @@ The focus of this guide is similar to its origin: to have readable code that is 
   * [Struct Initializers](#struct-initializers)
   * [Type Inference](#type-inference)
   * [Syntactic Sugar](#syntactic-sugar)
+  * [Generics](#generics)
 * [Control Flow](#control-flow)
 * [Semicolons](#semicolons)
 * [Language](#language)
@@ -496,7 +497,29 @@ var employees: Dictionary<Int, String>
 var faxNumber: Optional<Int>
 ```
 
+### Generics
 
+Methods of parameterized types can omit type parameters on the receiving type when they’re identical to the receiver’s. Omitting redundant type parameters clarifies the intent, and makes it obvious by contrast when the returned type takes different type parameters.
+
+**Preferred:**
+```swift
+struct Composite<T> {
+  …
+  func compose(other: Composite) -> Composite {
+    return Composite(self, other)
+  }
+}
+```
+
+**Not Preferred:**
+```swift
+struct Composite<T> {
+  …
+  func compose(other: Composite<T>) -> Composite<T> {
+    return Composite<T>(self, other)
+  }
+}
+```
 
 ## Control Flow
 
