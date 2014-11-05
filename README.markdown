@@ -330,6 +330,50 @@ if let view = self.optionalView {
 }
 ```
 
+When possible to use a [nil coalescing operator](https://developer.apple.com/library/mac/documentation/swift/conceptual/swift_programming_language/BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-XID_123) to provide a default value, use it.
+
+***Preferred:***
+```swift
+struct Party {
+    var guestList: [Person]?
+    func isAllowedAccess(person: Person) -> Bool {
+        let guestList = self.guestList ?? []
+        return contains(guestList, person)
+    }
+}
+```
+
+***Not Preferred:***
+```swift
+struct Party {
+    var guestList: [Person]?
+    func isAllowedAccess(person: Person) -> Bool {
+        var allowedAccess = false
+        if let list = guestList {
+            allowedAccess = contains(list, person)
+        }
+        return allowedAccess
+    }
+}
+```
+
+Be carefull not to conjure some non-sensible value though, so never do something like this:
+
+```swift
+protocol Schrodinger {
+    func numberOfAliveCats() -> Int?
+}
+
+struct Experiment {
+    func boxHasAliveCats(box: Schrodinger) -> Bool {
+        //When you don't know the number of alive cats, don't just assume it's zero!
+        let aliveCats = box.numberOfAliveCats() ?? 0
+        return aliveCats > 0
+    }
+}
+```
+
+The best thing to do here is make the return type of the function `Bool?`
 
 
 ### Struct Initializers
