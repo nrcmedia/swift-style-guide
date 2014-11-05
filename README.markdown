@@ -154,6 +154,9 @@ class Circle: Shape {
       radius = newValue / 2
     }
   }
+  var center : (x: Int, y: Int) {
+      return (x,y)
+  }
 
   init(x: Int, y: Int, radius: Double) {
     self.x = x
@@ -184,7 +187,9 @@ The example above demonstrates the following style guidelines:
  + Specify types for properties, variables, constants, argument declarations and other statements with a space after the colon but not before, e.g. `x: Int`, and `Circle: Shape`.
  + Define multiple variables and structures on a single line if they share a common purpose / context.
  + Indent getter and setter definitions and property observers.
+ + When possible, omit the `get` keyword on read-only computed properties and read-only subscripts.
  + Don't add modifiers such as `internal` when they're already the default. Similarly, don't repeat the access modifier when overriding a method.
+
 
 
 ### Use of Self
