@@ -530,11 +530,11 @@ Smiley faces are a very prominent style feature of the raywenderlich.com site! I
 **Not Preferred:**
 ```
 :)
-```  
+```
 
 
 ## Credits
 
 * [Niels van Hoorn](https://github.com/nvh)
- 
-And of course all the people mentioned in the credits of [the originating document](https://github.com/raywenderlich/swift-style-guide).
+
+And of course all the people mentioned in the credits of [the originating document](https://github.com/raywenderlich/swift-style-guide). The [Github swift style guide](https://github.com/github/swift-style-guide) also served as inspiration for some sections
