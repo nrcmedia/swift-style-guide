@@ -1,10 +1,8 @@
-# The Official raywenderlich.com Swift Style Guide.
+# The Official NRC Swift Style Guide.
 
-This style guide is different from others you may see, because the focus is centered on readability for print and the web. We created this style guide to keep the code in our books, tutorials, and starter kits nice and consistent — even though we have many different authors working on the books.
+This style guide is used for all projects of NRC Media. As you can see it is a forked from [The Official raywenderlich.com Swift Style Guide](The Official raywenderlich.com Swift Style Guide), but now is its own document additions and changes. See the git log for specific changes.
 
-Our overarching goals are conciseness, readability, and simplicity.
-
-Writing Objective-C? Check out our [Objective-C Style Guide](https://github.com/raywenderlich/objective-c-style-guide) too.
+The focus of this guide is similar to its origin: to have readable code that is consistent over all our projects — even though we have many different authors working on them. The overarching goals are conciseness, readability, and simplicity.
 
 ## Table of Contents
 
@@ -441,32 +439,6 @@ Smiley faces are a very prominent style feature of the raywenderlich.com site! I
 
 ## Credits
 
-This style guide is a collaborative effort from the most stylish raywenderlich.com team members: 
-
-* [Soheil Moayedi Azarpour](https://github.com/moayes)
-* [Scott Berrevoets](https://github.com/Scott90)
-* [Eric Cerney](https://github.com/ecerney)
-* [Sam Davies](https://github.com/sammyd)
-* [Evan Dekhayser](https://github.com/edekhayser)
-* [Jean-Pierre Distler](https://github.com/pdistler)
-* [Colin Eberhardt](https://github.com/ColinEberhardt)
-* [Greg Heo](https://github.com/gregheo)
-* [Matthijs Hollemans](https://github.com/hollance)
-* [Erik Kerber](https://github.com/eskerber)
-* [Christopher LaPollo](https://github.com/elephantronic)
-* [Andy Pereira](https://github.com/macandyp)
-* [Ryan Nystrom](https://github.com/rnystrom)
-* [Cesare Rocchi](https://github.com/funkyboy)
-* [Ellen Shapiro](https://github.com/designatednerd)
-* [Marin Todorov](https://github.com/icanzilb)
-* [Chris Wagner](https://github.com/cwagdev)
-* [Ray Wenderlich](https://github.com/rwenderlich)
-* [Jack Wu](https://github.com/jackwu95)
-
-Hat tip to [Nicholas Waynik](https://github.com/ndubbs) and the [Objective-C Style Guide](https://github.com/raywenderlich/objective-c-style-guide) team!
-
-We also drew inspiration from Apple’s reference material on Swift:
-
-* [The Swift Programming Language](https://developer.apple.com/library/prerelease/ios/documentation/swift/conceptual/swift_programming_language/index.html)
-* [Using Swift with Cocoa and Objective-C](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/BuildingCocoaApps/index.html)
-* [Swift Standard Library Reference](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/SwiftStandardLibraryReference/index.html)
+* [Niels van Hoorn](https://github.com/nvh)
+ 
+And of course all the people mentioned in the credits of [the originating document](https://github.com/raywenderlich/swift-style-guide).
