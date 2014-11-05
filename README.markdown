@@ -289,6 +289,18 @@ Declare variables and function return types as optional with `?` where a nil val
 
 Use implicitly unwrapped types declared with `!` only for instance variables that you know will be initialized later before use, such as subviews that will be set up in `viewDidLoad`.
 
+One valid use for implicitly unwrapped types is early returns like this one:
+
+```swift
+func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    let item : Item! = datasource.itemAtIndexPath(indexPath)
+    if item == nil {
+        return collectionView.dequeueReusableCellWithReuseIdentifier("identifier", forIndexPath: indexPath) as UICollectionViewCell
+    }
+    // use item
+}
+```
+
 When accessing an optional value, use optional chaining if the value is only accessed once or if there are many optionals in the chain:
 
 ```swift
@@ -302,6 +314,8 @@ if let view = self.optionalView {
   // do many things with view
 }
 ```
+
+
 
 ### Struct Initializers
 
@@ -362,6 +376,28 @@ var faxNumber: Optional<Int>
 
 ## Control Flow
 
+If possible, parentheses must not be used in control flow statements:
+
+**Preferred:**
+```swift
+if value == nil {
+  // do something
+}
+for person in attendeeList {
+  // do something
+}
+```
+
+**Not Preferred:**
+```swift
+if (value == nil) {
+  // do something
+}
+for (person in attendeeList) {
+  // do something
+}
+```
+
 Prefer the `for-in` style of `for` loop over the `for-condition-increment` style.
 
 **Preferred:**
@@ -386,7 +422,6 @@ for var i = 0; i < attendeeList.count; i++ {
   // do something
 }
 ```
-
 
 ## Semicolons
 
