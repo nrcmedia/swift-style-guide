@@ -131,6 +131,18 @@ else {
 
 * There should be exactly one blank line between methods to aid in visual clarity and organization. Whitespace within methods should separate functionality, but having too many sections in a method often means you should refactor into several methods.
 
+When using closures that fit on one line, always add a space between the opening and closing bracket and the content of the closure:
+
+**Preferred:**
+```swift
+attendeeList.filter { $0.attending }
+```
+
+**Not Preferred:**
+```swift
+attendeeList.filter {$0.attending}
+```
+
 ## Comments
 
 When they are needed, use comments to explain **why** a particular piece of code does something. Comments must be kept up-to-date or deleted.
