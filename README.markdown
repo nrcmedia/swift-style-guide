@@ -398,7 +398,7 @@ if let view = self.optionalView {
 
 When possible to use a [nil coalescing operator](https://developer.apple.com/library/mac/documentation/swift/conceptual/swift_programming_language/BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-XID_123) to provide a default value, use it.
 
-***Preferred:***
+**Preferred:**
 ```swift
 struct Party {
     var guestList: [Person]?
@@ -409,7 +409,7 @@ struct Party {
 }
 ```
 
-***Not Preferred:***
+**Not Preferred:**
 ```swift
 struct Party {
     var guestList: [Person]?
