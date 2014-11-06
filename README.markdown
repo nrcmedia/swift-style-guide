@@ -17,6 +17,7 @@ The focus of this guide is similar to its origin: to have readable code that is 
 * [Types](#types)
   * [Constants](#constants)
   * [Optionals](#optionals)
+    * [Nil coalescing operator](#nil-coalescing-operator)
   * [Struct Initializers](#struct-initializers)
   * [Type Inference](#type-inference)
   * [Syntactic Sugar](#syntactic-sugar)
@@ -395,8 +396,9 @@ if let view = self.optionalView {
   // do many things with view
 }
 ```
+#### Nil coalescing operator
 
-When possible to use a [nil coalescing operator](https://developer.apple.com/library/mac/documentation/swift/conceptual/swift_programming_language/BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-XID_123) to provide a default value, use it.
+When it's possible to use a [nil coalescing operator](https://developer.apple.com/library/mac/documentation/swift/conceptual/swift_programming_language/BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-XID_123) to provide a default value, use it.
 
 **Preferred:**
 ```swift
