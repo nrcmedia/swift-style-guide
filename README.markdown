@@ -333,11 +333,44 @@ Only use anonymous closure arguments when there's **only one** argument and the 
 **Preferred:**
 ```swift
 attendeeList.filter { $0.attending }
+
+func sumFirstElements(numberOfElements: Int, ofArray array: NSArray) -> Int {
+    var sum = 0
+    array.enumerateObjectsUsingBlock { value, index, stop in
+        if index >= numberOfElements-1 {
+            stop.memory = true
+        }
+        sum += value.integerValue
+    }
+    return sum
+}
+
+let list = [1,2,3,4,5]
+sumFirstElements(3, ofArray: list) // returns 6
 ```
 
 **Not Preferred:**
 ```swift
 attendeeList.filter { attendee in attendee.attending }
+
+func sumFirstElements(numberOfElements: Int, ofArray array: NSArray) -> Int {
+    var sum = 0
+    array.enumerateObjectsUsingBlock {
+        if $1 >= numberOfElements-1 {
+            $2.memory = true
+        }
+        sum += $0.integerValue
+    }
+    return sum
+}
+```
+
+The second example could of course be written much concise:
+
+```swift
+func sumFirstElements(numberOfElements: Int, ofArray array: [Int]) -> Int {
+    return array[0..<numberOfElements].reduce(0, combine: +)
+}
 ```
 
 ## Types
