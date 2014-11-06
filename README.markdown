@@ -328,12 +328,21 @@ attendeeList.sort { a, b in
 }
 ```
 
-Only use anonymous closure arguments when there's **only one** argument and the closure is really short:
+Only use anonymous closure arguments when the closure is really short and has only _one_ argument:
 
 **Preferred:**
 ```swift
 attendeeList.filter { $0.attending }
+```
 
+**Not Preferred:**
+```swift
+attendeeList.filter { attendee in attendee.attending }
+```
+When you use multiple anonymous closure arguments, especially when they have different types, it can get ugly pretty quickly:
+
+**Preferred:**
+```swift
 func sumFirstElements(numberOfElements: Int, ofArray array: NSArray) -> Int {
     var sum = 0
     array.enumerateObjectsUsingBlock { value, index, stop in
@@ -351,8 +360,6 @@ sumFirstElements(3, ofArray: list) // returns 6
 
 **Not Preferred:**
 ```swift
-attendeeList.filter { attendee in attendee.attending }
-
 func sumFirstElements(numberOfElements: Int, ofArray array: NSArray) -> Int {
     var sum = 0
     array.enumerateObjectsUsingBlock {
@@ -365,8 +372,9 @@ func sumFirstElements(numberOfElements: Int, ofArray array: NSArray) -> Int {
 }
 ```
 
-The second example could of course be written much concise:
+This example could of course be written much concise:
 
+**More Preferred:**
 ```swift
 func sumFirstElements(numberOfElements: Int, ofArray array: [Int]) -> Int {
     return array[0..<numberOfElements].reduce(0, combine: +)
