@@ -337,8 +337,7 @@ attendeeList.filter { $0.attending }
 
 **Not Preferred:**
 ```swift
-let list = [1,2,3]
-list.reduce(0) { $0 + $1 }
+attendeeList.filter { attendee in attendee.attending }
 ```
 
 ## Types
