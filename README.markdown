@@ -589,6 +589,74 @@ for (person in attendeeList) {
 }
 ```
 
+Prefer an early return over `if-else` when checking for edge cases or errors to reduce indentation
+
+**Preferred:**
+```swift
+protocol JSONParsable {
+    class func fromJSON(AnyObject) -> (Self?,NSError?)
+}
+
+func JSONAtPath<T:JSONParsable>(path: String) -> (T?, NSError?) {
+    var error: NSError? = nil
+    let data: NSData! = NSData(contentsOfFile: path, options: nil, error: &error)
+    if data == nil {
+        return (nil, error)
+    }
+    
+    let JSON: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &error)
+    if JSON == nil {
+        return (nil, error)
+    }
+    return T.fromJSON(JSON!)
+}
+```
+
+***Not Preferred:**
+```swift
+func JSONAtPath<T:JSONParsable>(path: String) -> (T?, NSError?) {
+    var error: NSError? = nil
+    let data: NSData! = NSData(contentsOfFile: path, options: nil, error: &error)
+    if data != nil {
+        let JSON: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &error)
+        if JSON != nil {
+            return T.fromJSON(JSON!)
+        }
+    }
+    return (nil, error)
+}
+```
+
+**Preferred:**
+```swift
+struct Engine  {
+    private var running = false
+    
+    mutating func start() {
+        if running {
+            return
+        }
+
+        // method for starting the engine
+        running = true
+    }
+}
+```
+
+**Not Preferred:**
+```swift
+struct Engine  {
+    private var running = false
+    
+    mutating func start() {
+        if !running {
+          // method for starting the engine
+          running = true
+        }
+    }
+}
+```
+
 Prefer the `for-in` style of `for` loop over the `for-condition-increment` style.
 
 **Preferred:**
