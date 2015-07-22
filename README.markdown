@@ -8,6 +8,7 @@ The focus of this guide is similar to its origin: to have readable code that is 
 
 * [Naming](#naming)
   * [Class Prefixes](#class-prefixes)
+  * [Protocol Naming](#protocol-naming)
 * [Spacing](#spacing)
 * [Comments](#comments)
 * [Classes and Structures](#classes-and-structures)
@@ -105,6 +106,29 @@ If you need to expose a Swift type for use within Objective-C you can provide a 
 }
 ```
 
+### Protocol Naming
+
+Use **one** of the following postfixes:
+
+- type
+- ing
+- able
+- ible
+
+Example of -ing versus -able
+
+-Containing implicates it is always there hence no optional
+```swift
+protocol MediaContaining {
+  var media: Media { get }
+}
+```
+-Containable implicates an optional because it can contain something but it is not said it currently does
+```swift
+protocol MediaContainable {
+  var media: Media? { get }
+}
+```
 
 ## Spacing
 
